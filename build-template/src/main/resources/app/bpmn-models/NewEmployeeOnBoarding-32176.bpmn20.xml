@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test" xmlns:modeler="http://activiti.com/modeler" modeler:version="1.0en" modeler:exportDateTime="20180118212945113" modeler:modelId="32176" modeler:modelVersion="4" modeler:modelLastUpdated="1516339783019">
+  <process id="NewEmployeeOnBoarding" name="NewEmployeeOnBoarding" isExecutable="true">
+    <userTask id="Assignment4_NewEmployeeOnBoarding" name="Employee Details" activiti:assignee="$INITIATOR" activiti:formKey="32172">
+      <extensionElements>
+        <modeler:allow-send-email><![CDATA[true]]></modeler:allow-send-email>
+        <modeler:form-reference-id><![CDATA[32172]]></modeler:form-reference-id>
+        <modeler:form-reference-name><![CDATA[EmployeeForm]]></modeler:form-reference-name>
+        <modeler:activiti-idm-initiator><![CDATA[true]]></modeler:activiti-idm-initiator>
+        <modeler:initiator-can-complete><![CDATA[false]]></modeler:initiator-can-complete>
+        <modeler:editor-resource-id><![CDATA[Assignment4_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <userTask id="Assignment3_NewEmployeeOnBoarding" name="Manager's Review" activiti:assignee="$INITIATOR" activiti:formKey="32173">
+      <extensionElements>
+        <modeler:allow-send-email><![CDATA[true]]></modeler:allow-send-email>
+        <modeler:form-reference-id><![CDATA[32173]]></modeler:form-reference-id>
+        <modeler:form-reference-name><![CDATA[ManagerForm]]></modeler:form-reference-name>
+        <modeler:activiti-idm-initiator><![CDATA[true]]></modeler:activiti-idm-initiator>
+        <modeler:initiator-can-complete><![CDATA[false]]></modeler:initiator-can-complete>
+        <modeler:editor-resource-id><![CDATA[Assignment3_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <userTask id="Assignment2_NewEmployeeOnBoarding" name="Admin Department" activiti:assignee="$INITIATOR" activiti:formKey="32175">
+      <extensionElements>
+        <modeler:allow-send-email><![CDATA[true]]></modeler:allow-send-email>
+        <modeler:form-reference-id><![CDATA[32175]]></modeler:form-reference-id>
+        <modeler:form-reference-name><![CDATA[AdminForm]]></modeler:form-reference-name>
+        <modeler:activiti-idm-initiator><![CDATA[true]]></modeler:activiti-idm-initiator>
+        <modeler:initiator-can-complete><![CDATA[false]]></modeler:initiator-can-complete>
+        <modeler:editor-resource-id><![CDATA[Assignment2_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <userTask id="Assignment1_NewEmployeeOnBoarding" name="HR Department" activiti:assignee="$INITIATOR" activiti:formKey="32174">
+      <extensionElements>
+        <modeler:allow-send-email><![CDATA[true]]></modeler:allow-send-email>
+        <modeler:form-reference-id><![CDATA[32174]]></modeler:form-reference-id>
+        <modeler:form-reference-name><![CDATA[HRForm]]></modeler:form-reference-name>
+        <modeler:activiti-idm-initiator><![CDATA[true]]></modeler:activiti-idm-initiator>
+        <modeler:initiator-can-complete><![CDATA[false]]></modeler:initiator-can-complete>
+        <modeler:editor-resource-id><![CDATA[Assignment1_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </userTask>
+    <startEvent id="Start1_NewEmployeeOnBoarding" name="Start1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[Start1_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </startEvent>
+    <endEvent id="End1_NewEmployeeOnBoarding" name="End1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[End1_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow2" sourceRef="Assignment2_NewEmployeeOnBoarding" targetRef="Decision1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow2]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow3" sourceRef="Assignment1_NewEmployeeOnBoarding" targetRef="Assignment2_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow3]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow4" sourceRef="Start1_NewEmployeeOnBoarding" targetRef="Assignment1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow4]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow5" sourceRef="Assignment3_NewEmployeeOnBoarding" targetRef="Assignment4_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow5]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow7" sourceRef="Assignment4_NewEmployeeOnBoarding" targetRef="End1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow7]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow8" sourceRef="Utility1_NewEmployeeOnBoarding" targetRef="End1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow8]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+    <exclusiveGateway id="Decision1_NewEmployeeOnBoarding" default="SequenceFlow6">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[Decision1_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </exclusiveGateway>
+    <serviceTask id="Utility1_NewEmployeeOnBoarding" name="Send Email" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to">
+          <activiti:string><![CDATA[abc@gmail.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="from">
+          <activiti:string><![CDATA[from@example.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="subject">
+          <activiti:string><![CDATA[Data Missing]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="cc">
+          <activiti:string><![CDATA[cc@example.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="bcc">
+          <activiti:string><![CDATA[bcc@example.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="html">
+          <activiti:string><![CDATA[Please look into the issue]]></activiti:string>
+        </activiti:field>
+        <modeler:editor-resource-id><![CDATA[Utility1_NewEmployeeOnBoarding]]></modeler:editor-resource-id>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="SequenceFlow1" sourceRef="Decision1_NewEmployeeOnBoarding" targetRef="Assignment3_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:conditionDefinition modeler:index="0" modeler:leftFormFieldId="adminResult" modeler:rightValue="Accept" modeler:operator="=="/>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow1]]></modeler:editor-resource-id>
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${(activiti_flowConditionsBean.exists(execution, 'adminResult') && adminResult == 'Accept')}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow6" sourceRef="Decision1_NewEmployeeOnBoarding" targetRef="Utility1_NewEmployeeOnBoarding">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[SequenceFlow6]]></modeler:editor-resource-id>
+      </extensionElements>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_NewEmployeeOnBoarding">
+    <bpmndi:BPMNPlane bpmnElement="NewEmployeeOnBoarding" id="BPMNPlane_NewEmployeeOnBoarding">
+      <bpmndi:BPMNShape bpmnElement="Assignment4_NewEmployeeOnBoarding" id="BPMNShape_Assignment4_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="55.0" width="110.0" x="825.0" y="86.5"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Assignment3_NewEmployeeOnBoarding" id="BPMNShape_Assignment3_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="55.0" width="110.0" x="630.0" y="86.5"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Assignment2_NewEmployeeOnBoarding" id="BPMNShape_Assignment2_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="55.0" width="110.0" x="330.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Assignment1_NewEmployeeOnBoarding" id="BPMNShape_Assignment1_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="55.0" width="110.0" x="150.0" y="107.5"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Start1_NewEmployeeOnBoarding" id="BPMNShape_Start1_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="30.0" width="30.0" x="30.0" y="120.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="End1_NewEmployeeOnBoarding" id="BPMNShape_End1_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="28.0" width="28.0" x="825.0" y="223.5"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Decision1_NewEmployeeOnBoarding" id="BPMNShape_Decision1_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="40.0" width="40.0" x="510.0" y="94.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Utility1_NewEmployeeOnBoarding" id="BPMNShape_Utility1_NewEmployeeOnBoarding">
+        <omgdc:Bounds height="55.0" width="110.0" x="570.0" y="210.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow4" id="BPMNEdge_SequenceFlow4">
+        <omgdi:waypoint x="60.0" y="135.0"/>
+        <omgdi:waypoint x="150.0" y="135.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow3" id="BPMNEdge_SequenceFlow3">
+        <omgdi:waypoint x="260.0" y="135.0"/>
+        <omgdi:waypoint x="295.0" y="135.0"/>
+        <omgdi:waypoint x="295.0" y="127.5"/>
+        <omgdi:waypoint x="330.0" y="127.5"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow6" id="BPMNEdge_SequenceFlow6">
+        <omgdi:waypoint x="538.695652173913" y="125.30434782608695"/>
+        <omgdi:waypoint x="603.8461538461538" y="210.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow5" id="BPMNEdge_SequenceFlow5">
+        <omgdi:waypoint x="740.0" y="114.0"/>
+        <omgdi:waypoint x="825.0" y="114.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow2" id="BPMNEdge_SequenceFlow2">
+        <omgdi:waypoint x="440.0" y="122.37931034482759"/>
+        <omgdi:waypoint x="511.70347003154575" y="115.70347003154575"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow1" id="BPMNEdge_SequenceFlow1">
+        <omgdi:waypoint x="550.0" y="114.0"/>
+        <omgdi:waypoint x="630.0" y="114.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow8" id="BPMNEdge_SequenceFlow8">
+        <omgdi:waypoint x="680.0" y="237.5"/>
+        <omgdi:waypoint x="825.0" y="237.5"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow7" id="BPMNEdge_SequenceFlow7">
+        <omgdi:waypoint x="870.8704453441296" y="141.5"/>
+        <omgdi:waypoint x="843.4110474775401" y="224.2130643054583"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
